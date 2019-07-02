@@ -2,7 +2,7 @@ var intro = new Howl({
 	src: ["./audio/brainpower_intro.mp3"],
 	loop: false,
 	onload: run,
-	onend: function() {
+	onend: function () {
 		looping = true;
 		// reset the tick timer, but advance it one tick
 		rate = 1.0005;
@@ -28,14 +28,20 @@ var looping = false;
 var rate = 1;
 var rate_timer = percent_time;
 
-var lang = "한국어";
+var lang = "영어";
 
-function change_lang(){
-	document.getElementById("lang_change").innerHTML = lang;
-	if(lang === "한국어"){
-		lang = "영어";
-	}else{
+function change_lang() {
+	if (lang === "영어") {
+		lang = "일본어";
+		document.getElementById("lang_change").innerHTML = lang;
+	}
+	else if (lang === "일본어") {
 		lang = "한국어";
+	document.getElementById("lang_change").innerHTML = lang;
+	}
+	else if (lang === "한국어") {
+		lang = "영어"
+		document.getElementById("lang_change").innerHTML = lang;
 	}
 }
 
@@ -50,7 +56,7 @@ function loading(ticks) {
 
 
 function update() {
-
+	document.getElementById("lang_change").innerHTML = lang;
 	var new_time = new Date();
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
@@ -75,8 +81,19 @@ function update() {
 	} else {
 		if (lang === "영어") {
 			document.getElementById("brainpower_text").classList.remove("brainpower_japanese");
+			document.getElementById("brainpower_text").classList.remove("brainpower_english");
+			document.getElementById("brainpower_text").classList.add("brainpower_korean");
+			document.getElementById("brainpower_text").innerHTML = brainpower_korean_text[ticks % 128];
+		}
+		if (lang === "일본어") {
+			document.getElementById("brainpower_text").classList.remove("brainpower_japanese");
+			document.getElementById("brainpower_text").classList.remove("brainpower_korean");
+			document.getElementById("brainpower_text").classList.add("brainpower_english");
 			document.getElementById("brainpower_text").innerHTML = brainpower_english_text[ticks % 128];
-		} else {
+		}
+		if (lang === "한국어") {
+			document.getElementById("brainpower_text").classList.remove("brainpower_english");
+			document.getElementById("brainpower_text").classList.remove("brainpower_korean");
 			document.getElementById("brainpower_text").classList.add("brainpower_japanese");
 			document.getElementById("brainpower_text").innerHTML = brainpower_japanese_text[ticks % 128];
 		}
@@ -118,10 +135,10 @@ function update() {
 	var offset_height = getComputedStyle(document.getElementById("brainpower_text")).height;
 	if (looping == false && ticks >= 40)
 		document.getElementById("brainpower_text").style.top = (rumble_rate - Math.random() * rumble_rate * 2) -
-		(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 240 + "px";
+			(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 240 + "px";
 	else
 		document.getElementById("brainpower_text").style.top = (rumble_rate - Math.random() * rumble_rate * 2) -
-		(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 250 + "px";
+			(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 250 + "px";
 	document.getElementById("brainpower_text").style.left = (rumble_rate - Math.random() * rumble_rate * 2) + "px";
 
 	requestAnimationFrame(update);
@@ -133,7 +150,7 @@ function run() {
 	intro.play();
 }
 
-var brainpower_japanese_text = [
+var brainpower_korean_text = [
 	"<span style=\"font-size: 300px;\">오</span>",
 	"<span style=\"font-size: 300px;\">오</span>",
 	"<span style=\"font-size: 300px;\">오</span>",
@@ -395,7 +412,7 @@ var brainpower_english_text = [
 	"AAAA<br>AAAA"
 ];
 
-var brainpower_korean_text = [
+var brainpower_japanese_text = [
 	"<span style=\"font-size: 300px;\">お</span>",
 	"<span style=\"font-size: 300px;\">お</span>",
 	"<span style=\"font-size: 300px;\">お</span>",
