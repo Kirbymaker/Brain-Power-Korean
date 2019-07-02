@@ -5,7 +5,7 @@
 [원본 소스](https://github.com/joezeng/ytmnd/tree/master/brain-power "원본 소스") / [Joe Zeng님의 실행 링크](http://joezeng.github.io/ytmnd/brain-power/ "JoeZeng님의 실행 링크") / [원곡](https://youtu.be/h-mUGj41hWA "원곡")
 
 ## 업데이트 예정
-- 완료
+<br>
 
 ## 업데이트 내역
 - 한글화
