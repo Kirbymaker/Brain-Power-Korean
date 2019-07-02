@@ -28,14 +28,14 @@ var looping = false;
 var rate = 1;
 var rate_timer = percent_time;
 
-var lang = "영어";
+var lang = "한국어";
 
 function change_lang(){
 	document.getElementById("lang_change").innerHTML = lang;
-	if(lang === "영어"){
-		lang = "한국어";
-	}else{
+	if(lang === "한국어"){
 		lang = "영어";
+	}else{
+		lang = "한국어";
 	}
 }
 
