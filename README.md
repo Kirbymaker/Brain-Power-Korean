@@ -1,5 +1,5 @@
 # Brain-Power-Korean
-https://kirbymaker.github.io/Brain-Power-Korean<br>
+실행: [개인 서버](https://kirbymaker.com/bpp "개인 서버") / [Github Pages](https://kirbymaker.github.io/Brain-Power-Korean "Github Pages")<br>
 <br>
 [Joe Zeng](https://github.com/joezeng "Joe Zeng")님의 brain-power를 번역하였습니다.<br>
 [원본 소스](https://github.com/joezeng/ytmnd/tree/master/brain-power "원본 소스") / [Joe Zeng님의 실행 링크](http://joezeng.github.io/ytmnd/brain-power/ "JoeZeng님의 실행 링크") / [원곡](https://youtu.be/h-mUGj41hWA "원곡")
